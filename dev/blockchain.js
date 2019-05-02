@@ -17,11 +17,21 @@ function Blockchain(){
 
       this.newTransaction = [];
       return newBlock;
-   } 
+   }  // END createNewBlock
 
    Blockchain.prototype.getLastBlock = function(){
       return this.chain[this.chain.length - 1];
    }
+
+   Blockchain.prototype.createNewTransaction = function(amount, sender, recipient){
+      const newTransaction = {
+         amount: amount,
+         sender: sender,
+         recipient: recipient,
+      }
+
+      this.newTransaction.push(newTransaction);
+   } // END createNewTransaction
 
 } // END Blockchain()
 
