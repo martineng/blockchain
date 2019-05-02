@@ -17,5 +17,12 @@ function Blockchain(){
 
       this.newTransaction = [];
       return newBlock;
+   } 
+
+   Blockchain.prototype.getLastBlock = function(){
+      return this.chain[this.chain.length - 1];
    }
-}
+
+} // END Blockchain()
+
+module.exports = Blockchain;
