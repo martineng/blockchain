@@ -1,2 +1,2 @@
-## A Simple Blockchain written Javascript using Node.js
-The primary motive of this project is to demonstrate and to help understanding Blockchain better in a practicle way.
+## A Simple Blockchain written in Javascript using Node.js
+The pupose of me starting this project is to demonstrate the implementation of Blockchain technology and to help the community understand this revolutionary tech in a practicle way.
