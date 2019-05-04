@@ -2,7 +2,7 @@
 
 function Blockchain(){
    this.chain = [];
-   this.newTransactions = [];
+   this.pendingTransactions = [];
    //this.createNewBlock(100, '0', '0'); // Genesis Block
 
    // Create new block
@@ -12,7 +12,7 @@ function Blockchain(){
       const newBlock = {
          index: this.chain.length + 1,
          timestamp: Date.now(),
-         transactions: this.newTransactions,
+         transactions: this.pendingTransactions,
          nonce: nonce,
          hash: hash,
          previousBlockHash: previousBlockHash,
@@ -34,10 +34,11 @@ function Blockchain(){
          recipient: recipient,
       } // END createNewTransaction
 
-      this.newTransaction.push(newTransaction);
-      return this.getlastBlock()['index'] + 1;
+      this.pendingTransactions.push(newTransaction);
+      return this.getLastBlock()['index'] + 1;
    } // END createNewTransaction
 
+   /*
    Blockchain.prototype.hashBlock = function(previousBlockHash, currentBlockData, nonce){
       
       // Convert info into string
@@ -47,7 +48,7 @@ function Blockchain(){
       return hash;
    } // END hashBlock
 
-   Blockchian.prototype.proofOfWork = function(previousBlockHash, currentBlockData){
+   Blockchain.prototype.proofOfWork = function(previousBlockHash, currentBlockData){
       // Using let as our variables will be changing through the process
       let nonce =0;
       let hash = this.hashBlock(previousBlockHash, currentBlockData, nonce);
@@ -60,7 +61,7 @@ function Blockchain(){
 
       return nonce;
    } // END proofOfWork
-
+*/
 
 } // END Blockchain
 
