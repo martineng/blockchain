@@ -1,4 +1,4 @@
-//const sha256 = require('256');
+const sha256 = require('sha256');
 
 function Blockchain(){
    this.chain = [];
@@ -38,16 +38,16 @@ function Blockchain(){
       return this.getLastBlock()['index'] + 1;
    } // END createNewTransaction
 
-   /*
+   
    Blockchain.prototype.hashBlock = function(previousBlockHash, currentBlockData, nonce){
       
       // Convert info into string
-      const dataString = previousBlockHash + nonce.tostring() + JSON.stringify(currentBlockData);
+      const dataString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
       const hash = sha256(dataString);
       
       return hash;
    } // END hashBlock
-
+/*
    Blockchain.prototype.proofOfWork = function(previousBlockHash, currentBlockData){
       // Using let as our variables will be changing through the process
       let nonce =0;
