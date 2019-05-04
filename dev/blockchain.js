@@ -18,7 +18,7 @@ function Blockchain(){
          previousBlockHash: previousBlockHash,
       };
 
-      this.newTransaction = [];
+      this.pendingTransactions = [];
       this.chain.push(newBlock);
       return newBlock;
    }  // END createNewBlock
