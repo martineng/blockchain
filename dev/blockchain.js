@@ -47,7 +47,7 @@ function Blockchain(){
       
       return hash;
    } // END hashBlock
-/*
+
    Blockchain.prototype.proofOfWork = function(previousBlockHash, currentBlockData){
       // Using let as our variables will be changing through the process
       let nonce =0;
@@ -61,7 +61,6 @@ function Blockchain(){
 
       return nonce;
    } // END proofOfWork
-*/
 
 } // END Blockchain
 
