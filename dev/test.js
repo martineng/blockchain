@@ -1,8 +1,8 @@
-//Import Blockchain constructor
+// Import Blockchain constructor
 const Blockchain = require('./blockchain');
+const bitcoin = new Blockchain(); // constructor
 
-// Testing the Blockchain constructor function
-const bitcoin = new Blockchain();
+console.log(bitcoin);
 
 /* Test Case : New Transaction
 bitcoin.createNewBlock(789457,'OIUOEDJETH8754DHKD','78SHNEG45DER56');
@@ -23,6 +23,7 @@ console.log(bitcoin.chain[1]);
 console.log("----------------------------------");
 */
 
+/* Test Case : Hash & Proof of Work generation
 const previousBlockHash = '87765DA6CCF0668238C1D27C35692E11';
 
 const currentBlockData = [
@@ -45,3 +46,4 @@ const currentBlockData = [
 
 //console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
 console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, 0));
+*/
