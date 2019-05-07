@@ -1,10 +1,11 @@
 {
   "name": "blockchain",
   "version": "1.0.0",
-  "description": "",
+  "description": "The pupose of me starting this project is to demonstrate the implementation of Blockchain technology and to help the community understand this revolutionary tech in a practicle way.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch dev -e js dev/api.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/martineng/blockchain/issues"
   },
-  "homepage": "https://github.com/martineng/blockchain#readme"
+  "homepage": "https://github.com/martineng/blockchain#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0",
+    "sha-256": "^1.0.3",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {}
 }
