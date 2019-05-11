@@ -24,7 +24,10 @@ app.get('/blockchain', function(req, res){
 
 // Send the Transaction result in blockIndex
 app.post('/transaction', function(req, res){
-   const blockIndex = bitcoin.createNewTransaction(req.body.amount, req.body.sender, req.body.recipient);
+   //const blockIndex = bitcoin.createNewTransaction(req.body.amount, req.body.sender, req.body.recipient);
+   const newTransaction = req.body;
+   const blockIndex = bitcoin.addTransactionToPendingTransaction(newTransaction);
+
    res.json({ note: `Transaction will be added in block ${blockIndex}.`});
 });
 
@@ -119,6 +122,29 @@ app.post('/register-nodes-bulk', function(req, res){
 
    res.json({note: 'Bulk registration successful.'});
 });
+
+app.post('/transaction/broadcast', function(req, res){
+   const newTransaction = bitcoin.createNewTransaction(req.body.amount,
+      req.body.sender, req.body.recipient);
+   const requestPromises = [];
+   bitcoin.addTransactionToPendingTransaction(newTransaction);
+   
+   bitcoin.networkNodes.forEach(networkNodeUrl => {
+      const requestOptions = {
+         uri: networkNodeUrl + '/transaction',
+         method: 'POST',
+         body: newTransaction,
+         json: true
+      };
+      requestPromises.push(rp(requestOptions));
+   }); // END forEach
+   
+   Promise.all(requestPromises)
+   .then(data => {
+      res.json({note: 'Transaction created and broadcast successfully.'})
+   });
+});
+
 
 // Serve is listening to port
 app.listen(port, function(){
