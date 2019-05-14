@@ -78,6 +78,7 @@ Blockchain.prototype.addTransactionToPendingTransaction = function(transactionOb
 
 Blockchain.prototype.chainIsValid = function(blockchain){
    let validChain = true;
+   
    for (var i = 1; i< blockchain.length; i++){
       const currentBlock = blockchain[i];
       const previousBlock = blockchain[i - 1];
@@ -92,7 +93,23 @@ Blockchain.prototype.chainIsValid = function(blockchain){
       if (blockHash.substring(0, 4) !== '0000') validChain = false;
 
       if (currentBlock['previousBlockHash'] !== previousBlock['hash']) validChain = false;
-   }
+
+      //console.log('previousBlockHash =>', previousBlock['hash']);
+      //console.log('currentBlockHash =>', currentBlock['hash']);
+   }; // END for
+
+   const genesisBlock = blockchain[0];
+
+   // Check and verify the properties on genesis block
+   const correctNonce = genesisBlock['nonce'] === 100;
+   const correctPreviousBlockHash = genesisBlock['previousBlockHash'] === '0';
+   const correctHash = genesisBlock['hash'] === '0';
+   const correctTransactions = genesisBlock['transactions'].length === 0;
+
+   if (!correctNonce || !correctPreviousBlockHash || !correctHash || !correctTransactions){
+      validChain = false;
+   };
+
    return validChain;
 };
 

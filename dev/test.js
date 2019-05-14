@@ -2,7 +2,92 @@
 const Blockchain = require('./blockchain');
 const bitcoin = new Blockchain(); // constructor
 
-console.log(bitcoin);
+const bc1 =
+{
+   chain: [
+   {
+   "index": 1,
+   "timestamp": 1557816244370,
+   "transactions": [ ],
+   "nonce": 100,
+   "hash": "0",
+   "previousBlockHash": "0"
+   },
+   {
+   "index": 2,
+   "timestamp": 1557816286764,
+   "transactions": [ ],
+   "nonce": 18140,
+   "hash": "0000b9135b054d1131392c9eb9d03b0111d4b516824a03c35639e12858912100",
+   "previousBlockHash": "0"
+   },
+   {
+   "index": 3,
+   "timestamp": 1557816287784,
+   "transactions": [
+   {
+   "amount": 12.5,
+   "sender": "00",
+   "recipient": "aa372e30761311e9849fc920668a033a",
+   "transactionId": "c37f5930761311e9849fc920668a033a"
+   }
+   ],
+   "nonce": 147321,
+   "hash": "00003f8ad90bb4e60ce1c90394b5f9dae84ef9bdb6b08d0b256c4cd24e09e494",
+   "previousBlockHash": "0000b9135b054d1131392c9eb9d03b0111d4b516824a03c35639e12858912100"
+   },
+   {
+   "index": 4,
+   "timestamp": 1557816444962,
+   "transactions": [
+   {
+   "amount": 12.5,
+   "sender": "00",
+   "recipient": "aa372e30761311e9849fc920668a033a",
+   "transactionId": "c417c8a0761311e9849fc920668a033a"
+   },
+   {
+   "amount": 100,
+   "sender": "NNFANSDFHYHTN90A09SNFAS",
+   "recipient": "IUW099N0A90WENNU234UFAW",
+   "transactionId": "179ba2d0761411e9849fc920668a033a"
+   }
+   ],
+   "nonce": 82518,
+   "hash": "0000a7e647899918a9967cdfd0ccafd956d2ddf6ba0df86ead8047832c26374a",
+   "previousBlockHash": "00003f8ad90bb4e60ce1c90394b5f9dae84ef9bdb6b08d0b256c4cd24e09e494"
+   },
+   {
+   "index": 5,
+   "timestamp": 1557816445448,
+   "transactions": [
+   {
+   "amount": 12.5,
+   "sender": "00",
+   "recipient": "aa372e30761311e9849fc920668a033a",
+   "transactionId": "21c91300761411e9849fc920668a033a"
+   }
+   ],
+   "nonce": 68659,
+   "hash": "00002f70813cc058ecbedf2b31a2bdeee895f147b551b31f2fe711d6ab95b720",
+   "previousBlockHash": "0000a7e647899918a9967cdfd0ccafd956d2ddf6ba0df86ead8047832c26374a"
+   }
+   ],
+   "pendingTransactions": [
+   {
+   "amount": 12.5,
+   "sender": "00",
+   "recipient": "aa372e30761311e9849fc920668a033a",
+   "transactionId": "221166a0761411e9849fc920668a033a"
+   }
+   ],
+   "currentNodeUrl": "http://localhost:3001",
+   "networkNodes": [ ]
+};
+
+console.log('VALID:',bitcoin.chainIsValid(bc1.chain));
+
+//console.log(bitcoin);
 
 /* Test Case : New Transaction
 bitcoin.createNewBlock(789457,'OIUOEDJETH8754DHKD','78SHNEG45DER56');
