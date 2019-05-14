@@ -76,4 +76,25 @@ Blockchain.prototype.addTransactionToPendingTransaction = function(transactionOb
    return this.getLastBlock()['index'] + 1;
 };
 
+Blockchain.prototype.chainIsValid = function(blockchain){
+   let validChain = true;
+   for (var i = 1; i< blockchain.length; i++){
+      const currentBlock = blockchain[i];
+      const previousBlock = blockchain[i - 1];
+      
+      // Rehash every block to make sure that each hash starts with four 0.
+      const blockHash = this.hashBlock(previousBlock['hash'], {
+         transactions: currentBlock['transactions'],
+         index: currentBlock['index']
+      }, currentBlock['nonce'] );
+      
+      // The hash no started with four 0.
+      if (blockHash.substring(0, 4) !== '0000') validChain = false;
+
+      if (currentBlock['previousBlockHash'] !== previousBlock['hash']) validChain = false;
+   }
+   return validChain;
+};
+
+
 module.exports = Blockchain;

@@ -7,8 +7,9 @@ The pupose of me starting this project is to demonstrate the implementation of B
 3. Create new, immutable transactions <br />
 4. Validate the entire blockchain and all of the data within each block <br />
 5. Retrieve address/transaction/block data <br />
-6. API foudnation with endpoints. <br />
+6. API foudnation with endpoints <br />
 7. Decentralized network with multiple nodes <br />
+8. Synchronized Network, means it has only a single version of Blockchain across nodes <br />
 
 ## Installed npm Libraries (Exp. npm i sha256 --save)
 1. sha256  <br />
