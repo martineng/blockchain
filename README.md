@@ -10,6 +10,7 @@ The pupose of me starting this project is to demonstrate the implementation of B
 6. API foudnation with endpoints <br />
 7. Decentralized network with multiple nodes <br />
 8. Synchronized Network, means it has only a single version of Blockchain across nodes <br />
+9. Consense the Blockchain via Consensus Algorithms.
 
 ## Installed npm Libraries (Exp. npm i sha256 --save)
 1. sha256  <br />

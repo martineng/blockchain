@@ -196,6 +196,8 @@ app.post('/transaction/broadcast', function(req, res){
    });
 });
 
+// To let all the nodes verify and agree upon which data 
+// is correct and should be retained inside the blockchain.
 app.get('/consensus', function(req, res){
    const requestPromises = [];
 
@@ -240,10 +242,8 @@ app.get('/consensus', function(req, res){
             chain: bitcoin.chain
          });
       }
-
-   });
-
-});
+   }); // END .then
+}); // END /consensus
 
 
 // Serve is listening to port
