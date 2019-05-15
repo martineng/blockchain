@@ -274,6 +274,13 @@ app.get('/address/:address', function(req, res){
 _
 });
 
+app.get('/block-explorer', function(req, res){
+   
+   res.sendFile('./block-explorer/index.html', {
+      root: __dirname
+   });
+});
+
 
 // Serve is listening to port
 app.listen(port, function(){
