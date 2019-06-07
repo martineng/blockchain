@@ -1,7 +1,10 @@
-## A Simple Blockchain written in Javascript using Node.js
-The pupose of me starting this project is to demonstrate the implementation of Blockchain technology and to help the community understand this revolutionary tech in a practicle way.
+# Blockchain
 
-## This Blockchain application currently has the ability to:
+This project is written in Node.js to demonstrate the basic concept and implementation of Blockchain technology. Ideally to help the community to understand this revolutionary tech in a more practical approch.
+
+You can contact me via [me@martineng.info](me@martineng.info) or [my Linkedin](https://linkedin.com/in/martineng-info/).
+
+## This Blockchain application demonstrate the ability to:
 1. Perform a proof of work to secure the blockchain <br />
 2. Create new blocks through a mining process <br />
 3. Create new, immutable transactions <br />
@@ -13,12 +16,22 @@ The pupose of me starting this project is to demonstrate the implementation of B
 9. Consense the Blockchain via Consensus Algorithms.
 10. To search and display specific block, transaction and address.
 
-## Installed npm Libraries (Exp. npm i sha256 --save)
-1. sha256  <br />
-2. express <br />
-3. nodemon : restart our server automatically when we make changes <br />
-4. body-parser <br />
-5. uuid : create an unique random network node address string <br />
-6. request <br />
-7. request-promise : make request to all other nodes in the network <br />
+## Installation
 
+All of the following packages are require to run this application.
+
+```bash
+npm i sha256 --save
+npm i express --save
+npm i nodemon --save
+npm i body-parser --save
+npm i uuid --save
+npm i request --save
+npm i request-promise --save
+```
+
+## Contributing
+Pull requests are welcome. As this project is just a simple demonstration, I believe this project will not be having any major changes/update in the furture. However, you are welcome to open an issue to discuss what you think you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
